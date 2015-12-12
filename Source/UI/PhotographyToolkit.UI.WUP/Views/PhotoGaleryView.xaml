@@ -1,0 +1,20 @@
+﻿<Page
+    x:Class="PhotographyToolkit.UI.WUP.Views.PhotoGaleryView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PhotographyToolkit.UI.WUP.Views"
+    xmlns:ctl="using:PhotographyToolkit.UI.WUP.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+          EntranceNavigationTransitionInfo.IsTargetElement="True">
+        <ctl:PageHeader>
+            <ctl:PageHeader.HeaderContent>
+                <TextBlock x:Name="title" Style="{ThemeResource PageTitleTextBlockStyle}" Text="PHOTO GALLERY"/>
+            </ctl:PageHeader.HeaderContent>
+        </ctl:PageHeader>
+
+    </Grid>
+</Page>

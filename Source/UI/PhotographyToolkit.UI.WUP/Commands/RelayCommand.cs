@@ -3,9 +3,9 @@
     using System;
     using System.Windows.Input;
 
-    public class DelegateCommand :ICommand
+    public class RelayCommand : ICommand
     {
-        public DelegateCommand(Action execute, Func<bool> canExecute = null)
+        public RelayCommand(Action execute, Func<bool> canExecute = null)
         {
             this.execute = execute;
             this.canExecute = canExecute;
