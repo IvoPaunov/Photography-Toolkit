@@ -3,7 +3,7 @@
     using System;
     using Newtonsoft.Json;
 
-    public class Results
+    public class SunSetRiseResults
     {
         [JsonProperty(PropertyName = "sunrise")]
         public DateTime Sunrise { get; set; }

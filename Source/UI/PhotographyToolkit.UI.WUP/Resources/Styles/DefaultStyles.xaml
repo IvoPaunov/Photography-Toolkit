@@ -104,6 +104,16 @@
         <Setter Property="Margin" Value="12, 14, 12, 4"/>
     </Style>
 
+    <Style TargetType="TextBlock" BasedOn="{StaticResource BodyTextBlockStyle}">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="TextWrapping" Value="NoWrap"/>
+        <Setter Property="CharacterSpacing" Value="75"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Margin" Value="12, 14, 12, 4"/>
+    </Style>
+
     <Style x:Key="NavMenuItemContainerStyle" TargetType="ListViewItem">
         <Setter Property="MinWidth" Value="{StaticResource SplitViewCompactPaneThemeLength}"/>
         <Setter Property="Height" Value="48"/>

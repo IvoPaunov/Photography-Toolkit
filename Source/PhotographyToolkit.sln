@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotographyToolkit.Tests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotographyToolkit.UI.WUP", "UI\PhotographyToolkit.UI.WUP\PhotographyToolkit.UI.WUP.csproj", "{0AB625B2-DD69-45EB-94B2-5039919FFC71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotographyToolkit.Tools.SunsetAndSunriseService", "PhotographyToolkit.Tools.SunsetAndSunriseService\PhotographyToolkit.Tools.SunsetAndSunriseService.csproj", "{2B7D4210-C9E3-4FFA-930B-5B1235727910}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotographyToolkit.Tools.SunsetAndSunriseService", "Tools\PhotographyToolkit.Tools.SunsetAndSunriseService\PhotographyToolkit.Tools.SunsetAndSunriseService.csproj", "{2B7D4210-C9E3-4FFA-930B-5B1235727910}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTests", "QuickTests\QuickTests.csproj", "{651D9238-924A-46CD-9827-5AFD7CBCDE52}"
 EndProject

@@ -20,6 +20,29 @@
         </uap:DefaultTile>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
+      <Extensions>
+        <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.ToastNotificationHistoryChangedTriggerTask">
+          <BackgroundTasks>
+            <Task Type="systemEvent" />
+            <uap:Task Type="phoneCall" />
+          </BackgroundTasks>
+        </Extension>
+        <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.ToastNotificationQuickReplyTask">
+          <BackgroundTasks>
+            <Task Type="systemEvent" />
+          </BackgroundTasks>
+        </Extension>
+        <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.ToastActivationTypeBackgroundClosedTask">
+          <BackgroundTasks>
+            <Task Type="systemEvent" />
+          </BackgroundTasks>
+        </Extension>
+        <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.BadgeNotificationHistoryChangedTriggerTask">
+          <BackgroundTasks>
+            <Task Type="systemEvent" />
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
     </Application>
   </Applications>
   <Capabilities>

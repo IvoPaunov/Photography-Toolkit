@@ -1,5 +1,8 @@
 ﻿namespace PhotographyToolkit.UI.WUP.Views
 {
+    using System;
+    using Windows.UI.Popups;
+    using Windows.UI.Xaml;
     using Windows.UI.Xaml.Controls;
 
     /// <summary>
@@ -18,9 +21,16 @@
                 typeof(BasicSubPage),
                 e.ClickedItem,
                 new Windows.UI.Xaml.Media.Animation.DrillInNavigationTransitionInfo());
+        }
 
-            // DrillInNavigationTransitionInfo
-            // ContinuumNavigationTransitionInfo
+        private async void Error(string message)
+        {
+            await new MessageDialog(message, "ERROR").ShowAsync();
+        }
+
+        private async void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
         }
     }
 }
+

@@ -6,7 +6,7 @@
     public class ResultModel
     {
         [JsonProperty(PropertyName = "results")]
-        public Results Results { get; set; }
+        public SunSetRiseResults SunSetRiseResults { get; set; }
 
         [JsonProperty(PropertyName = "status")]
         public string Status { get; set; }

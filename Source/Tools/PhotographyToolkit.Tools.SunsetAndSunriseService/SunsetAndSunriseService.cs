@@ -14,21 +14,23 @@
         private HttpClient httpClient;
 
 
-        public async Task<Results> GetSunsetAndSunriseTimes(RequestModel request)
+        public async Task<SunSetRiseResults> GetSunsetAndSunriseTimes(double latitude, double longtitude, DateTime? date )
         {
             this.httpClient = new HttpClient();
             this.httpClient.BaseAddress = new Uri(ApiBaseUrl);
 
-            var resultString = await this.GetData(request);
+            var requestModel = new SunSetRiseRequestModel(latitude, longtitude, date);
+
+            var resultString = await this.GetData(requestModel);
 
             return this.DeserialiseResult(resultString);
         }
 
-        private async Task<string> GetData(RequestModel request)
+        private async Task<string> GetData(SunSetRiseRequestModel sunSetRiseRequest)
         {
-            string lat = request != null ? request.Latitude.ToString() : "";
-            string lng = request != null ? request.Longitude.ToString() : "";
-            string date = this.GetDateString(request.Date);
+            string lat = sunSetRiseRequest != null ? sunSetRiseRequest.Latitude.ToString() : "";
+            string lng = sunSetRiseRequest != null ? sunSetRiseRequest.Longitude.ToString() : "";
+            string date = this.GetDateString(sunSetRiseRequest.Date);
 
 
             var query = string.Format(QueryString, lat, lng, date);
@@ -38,11 +40,11 @@
             return await response.Content.ReadAsStringAsync();
         }
 
-        private Results DeserialiseResult(string resultAsString)
+        private SunSetRiseResults DeserialiseResult(string resultAsString)
         {
             var result = JsonConvert.DeserializeObject<ResultModel>(resultAsString);
 
-            return result.Results;
+            return result.SunSetRiseResults;
         }
 
         private string GetDateString(DateTime? date)
