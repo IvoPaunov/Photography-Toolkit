@@ -43,7 +43,8 @@
            
            <StackPanel
                Grid.Row="0"
-               Visibility="{Binding WaitingForLocation, Converter={StaticResource BooleanToVisibilityConverter}}">
+               Visibility="{Binding WaitingForLocation, 
+                                Converter={StaticResource BooleanToVisibilityConverter}}">
                <TextBlock Text="Getting information"
                           HorizontalAlignment="Center"/>
                 <ProgressBar Grid.Row="1"
@@ -53,46 +54,53 @@
                          />
            </StackPanel>
            
-           <Button Content="Get info"
+           <Button Content="Refresh info"
                    Grid.Row="1"
                    Command="{Binding GetSunSetRiseInfo}"
                    HorizontalAlignment="Stretch"
-                   Visibility="{Binding WaitingForLocation, Converter={StaticResource InverseBooleanToVisibilityConverter}}"
+                   Visibility="{Binding WaitingForLocation, 
+                                    Converter={StaticResource InverseBooleanToVisibilityConverter}}"
                    />
            
-            <StackPanel Grid.Row="2"
-                        Visibility="{Binding WaitingForLocation, Converter={StaticResource InverseBooleanToVisibilityConverter}}">
+           <Grid Grid.Row="2"
+                    Visibility="{Binding WaitingForLocation, 
+                                        Converter={StaticResource InverseBooleanToVisibilityConverter}}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
                
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Date"/>  
-                    <TextBlock Text="{Binding SunResult.Date}"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Latitude"/>
-                    <TextBox  Text="{Binding SunResult.Latitude}"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Longitude"/>
-                    <TextBox Text="{Binding SunResult.Longitude}"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Town"/>
-                    <TextBox  Text="{Binding SunResult.City}"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Country"/>
-                    <TextBox Text="{Binding SunResult.Country}"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Sunset"/>
-                    <TextBlock Text="{Binding SunResult.Sunset}"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Sunrise"/>
-                    <TextBlock Text="{Binding SunResult.Sunrise}"/>
-                </StackPanel>
-              
-            </StackPanel>
+                    <TextBlock Text="Date" Grid.Row="1" Grid.Column="0"/>
+                    <TextBlock Text="{Binding SunResult.Date}" Grid.Row="1" Grid.Column="1"/>
+               
+                    <TextBlock Text="Latitude" Grid.Row="2" Grid.Column="0"/>
+                    <TextBlock  Text="{Binding SunResult.Latitude}" Grid.Row="2" Grid.Column="1"/>
+               
+                    <TextBlock Text="Longitude" Grid.Row="3" Grid.Column="0"/>
+                    <TextBlock Text="{Binding SunResult.Longitude}" Grid.Row="3" Grid.Column="1"/>
+               
+                    <TextBlock Text="Town" Grid.Row="4" Grid.Column="0"/>
+                    <TextBlock  Text="{Binding SunResult.City}" Grid.Row="4" Grid.Column="1"/>
+               
+                    <TextBlock Text="Country" Grid.Row="5" Grid.Column="0"/>
+                    <TextBlock Text="{Binding SunResult.Country}" Grid.Row="5" Grid.Column="1"/>
+               
+                    <TextBlock Text="Sunset" Grid.Row="6" Grid.Column="0"/>
+                    <TextBlock Text="{Binding SunResult.Sunset}" Grid.Row="6" Grid.Column="1"/>
+               
+                    <TextBlock Text="Sunrise" Grid.Row="7" Grid.Column="0"/>
+                    <TextBlock Text="{Binding SunResult.Sunrise}" Grid.Row="7" Grid.Column="1"/>
+            </Grid>
         </Grid>
 
         <!--<ListView Grid.Row="1" Header="Click An Item To Drill In"

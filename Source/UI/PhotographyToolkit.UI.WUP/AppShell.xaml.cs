@@ -45,6 +45,12 @@
                 },
                 new NavMenuItem()
                 {
+                    Symbol = Symbol.Map,
+                    Label = "Compass",
+                    DestPage = typeof(CompassView)
+                },
+                new NavMenuItem()
+                {
                     Symbol = Symbol.Video,
                     Label = "Tutorials",
                     DestPage = typeof(TutorialsView)
@@ -55,19 +61,7 @@
                     Label = "Photo Gallery",
                     DestPage = typeof(PhotoGaleryView)
                 }
-                //,
-                //new NavMenuItem()
-                //{
-                //    Symbol = Symbol.Setting,
-                //    Label = "Settings",
-                //    DestPage = typeof(SettingsViev)
-                //}
-            });
-
-        // Declare the bottom level nav items
-        private List<NavMenuItem> navlistBottom = new List<NavMenuItem>(
-            new[]
-            {
+                ,
                 new NavMenuItem()
                 {
                     Symbol = Symbol.Setting,
@@ -76,10 +70,22 @@
                 }
             });
 
-        private List<NavMenuItem> NavLists
-        {
-            get { return this.navlistTop.Concat(this.navlistBottom).ToList(); }
-        }
+        //// Declare the bottom level nav items
+        //private List<NavMenuItem> navlistBottom = new List<NavMenuItem>(
+        //    new[]
+        //    {
+        //        new NavMenuItem()
+        //        {
+        //            Symbol = Symbol.Setting,
+        //            Label = "Settings",
+        //            DestPage = typeof(SettingsViev)
+        //        }
+        //    });
+
+        //private List<NavMenuItem> NavLists
+        //{
+        //    get { return this.navlistTop.Concat(this.navlistBottom).ToList(); }
+        //}
 
         public static AppShell Current = null;
 
@@ -111,7 +117,7 @@
             SystemNavigationManager.GetForCurrentView().BackRequested += SystemNavigationManager_BackRequested;
 
             this.NavMenuList.ItemsSource = this.navlistTop;
-            this.NavMenuListBottomn.ItemsSource = this.navlistBottom;
+            //this.NavMenuListBottomn.ItemsSource = this.navlistBottom;
         }
 
         public Frame AppFrame { get { return this.frame; } }
@@ -209,14 +215,14 @@
         {
             if (e.NavigationMode == NavigationMode.Back)
             {
-                var item = (from p in this.NavLists where p.DestPage == e.SourcePageType select p).SingleOrDefault();
+                var item = (from p in this.navlistTop where p.DestPage == e.SourcePageType select p).SingleOrDefault();
                 if (item == null && this.AppFrame.BackStackDepth > 0)
                 {
                     // In cases where a page drills into sub-pages then we'll highlight the most recent
                     // navigation menu item that appears in the BackStack
                     foreach (var entry in this.AppFrame.BackStack.Reverse())
                     {
-                        item = (from p in this.NavLists where p.DestPage == entry.SourcePageType select p).SingleOrDefault();
+                        item = (from p in this.navlistTop where p.DestPage == entry.SourcePageType select p).SingleOrDefault();
                         if (item != null)
                             break;
                     }
@@ -240,23 +246,23 @@
                     containerTop.IsTabStop = true;
                 }
 
-                // Bot Nav list
-                var containerBot = (ListViewItem)this.NavMenuListBottomn.ContainerFromItem(item);
+                //// Bot Nav list
+                //var containerBot = (ListViewItem)this.NavMenuListBottomn.ContainerFromItem(item);
 
-                // While updating the selection state of the item prevent it from taking keyboard focus.  If a
-                // user is invoking the back button via the keyboard causing the selected nav menu item to change
-                // then focus will remain on the back button.
-                if (containerBot != null)
-                {
-                    containerBot.IsTabStop = false;
-                }
+                //// While updating the selection state of the item prevent it from taking keyboard focus.  If a
+                //// user is invoking the back button via the keyboard causing the selected nav menu item to change
+                //// then focus will remain on the back button.
+                //if (containerBot != null)
+                //{
+                //    containerBot.IsTabStop = false;
+                //}
 
-                this.NavMenuListBottomn.SetSelectedItem(containerBot);
+                //this.NavMenuListBottomn.SetSelectedItem(containerBot);
 
-                if (containerBot != null)
-                {
-                    containerBot.IsTabStop = true;
-                }
+                //if (containerBot != null)
+                //{
+                //    containerBot.IsTabStop = true;
+                //}
             }
         }
 

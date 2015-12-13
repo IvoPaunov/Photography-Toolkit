@@ -59,12 +59,11 @@
             Geopoint pointToReverseGeocode = new Geopoint(location);
 
             // Reverse geocode the specified geographic location.
-            MapLocationFinderResult result =
-                await MapLocationFinder.FindLocationsAtAsync(pointToReverseGeocode);
+            MapLocationFinderResult result = await MapLocationFinder.FindLocationsAtAsync(pointToReverseGeocode);
 
             MapAddress addres = null; 
 
-            if (result != null && result.Locations[0] != null)
+            if (result != null && result.Locations != null && result.Locations.Count > 0)
             {
                 addres = result.Locations[0].Address;
             }

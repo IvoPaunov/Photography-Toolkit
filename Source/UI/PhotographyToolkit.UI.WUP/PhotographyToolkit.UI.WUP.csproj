@@ -102,12 +102,14 @@
       <DependentUpon>AppShell.xaml</DependentUpon>
     </Compile>
     <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Controls\CompassControl.cs" />
     <Compile Include="Controls\NavMenuListView.cs" />
     <Compile Include="Controls\PageHeader.xaml.cs">
       <DependentUpon>PageHeader.xaml</DependentUpon>
     </Compile>
     <Compile Include="Convertors\BooleanToVisibilityConverter.cs" />
     <Compile Include="Convertors\InverseBooleanToVisibilityConverter.cs" />
+    <Compile Include="Convertors\ReverseRotationConverter.cs" />
     <Compile Include="Helpers\Geolocator\GeoLocatorHelper.cs" />
     <Compile Include="Helpers\ToastNotifications\ToastCrerator.cs" />
     <Compile Include="NavMenuItem.cs" />
@@ -115,6 +117,9 @@
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\SunSetRiseResultViewModel.cs" />
     <Compile Include="ViewModels\SunsetSunriseViewModel.cs" />
+    <Compile Include="Views\CompassView.xaml.cs">
+      <DependentUpon>CompassView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ExposureCalculatorView.xaml.cs">
       <DependentUpon>ExposureCalculatorView.xaml</DependentUpon>
     </Compile>
@@ -150,6 +155,10 @@
     <None Include="PhotographyToolkit.UI.WUP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Compass\Compass.png" />
+    <Content Include="Assets\Compass\CompassFace.png" />
+    <Content Include="Assets\Compass\CompassFace2.png" />
+    <Content Include="Assets\Compass\Needle.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -172,6 +181,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Resources\Styles\CompassStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
     <Page Include="Resources\Styles\DefaultStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -181,6 +195,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Views\CompassView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ExposureCalculatorView.xaml">
       <SubType>Designer</SubType>

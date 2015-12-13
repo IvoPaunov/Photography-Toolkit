@@ -65,11 +65,11 @@
                    IsTabStop="False">
             <SplitView.Pane>
                 <!-- A custom ListView to display the items in the pane.  The automation Name is set in the ContainerContentChanging event. -->
-                <Grid>
+                <!--<Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition />
                         <RowDefinition/>
-                    </Grid.RowDefinitions>
+                    </Grid.RowDefinitions>-->
 
                     <controls:NavMenuListView x:Name="NavMenuList"
                                               Grid.Row="0"
@@ -80,7 +80,7 @@
                                           ItemTemplate="{StaticResource NavMenuItemTemplate}"
                                           ItemInvoked="NavMenuList_ItemInvoked" />
 
-                    <controls:NavMenuListView x:Name="NavMenuListBottomn"
+                    <!--<controls:NavMenuListView x:Name="NavMenuListBottomn"
                                               Grid.Row="1"
                                          TabIndex="3"
                                           Margin="0,48,0,0"
@@ -88,8 +88,8 @@
                                           ContainerContentChanging="NavMenuItemContainerContentChanging"
                                           ItemContainerStyle="{StaticResource NavMenuItemContainerStyle}"
                                           ItemTemplate="{StaticResource NavMenuItemTemplate}"
-                                          ItemInvoked="NavMenuList_ItemInvoked" />
-                </Grid>
+                                          ItemInvoked="NavMenuList_ItemInvoked" />-->
+                <!--</Grid>-->
 
             </SplitView.Pane>
 

@@ -54,7 +54,7 @@
                 var latitude = result.Coordinate.Latitude;
                 var longtutude = result.Coordinate.Longitude;
 
-                this.WaitingForLocation = false;
+             
 
                 var sunResult = await this.sunSetRiseService.GetSunsetAndSunriseTimes(
                     latitude,
@@ -77,6 +77,8 @@
                     this.SunResult.Country = address.Country;
                 }
             }
+
+            this.WaitingForLocation = false;
         }
 
         public SunSetRiseResultViewModel SunResult
